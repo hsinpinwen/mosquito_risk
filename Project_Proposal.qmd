@@ -26,25 +26,23 @@ editor: visual
 
 ## 2. Question and Audience
 
-**Research Question:** Can historical climate conditions and mosquito surveillance data predict West Nile virus (WNV) cases or incidence in the United States?
+**Research Question:** Can historical climate conditions, mosquito surveillance data, predict West Nile virus (WNV) cases/incidence in the United States? Based on feasibility, we may narrow down the scope of our model to focus on a smaller region (e.g., Chicago area).
 
-Depending on data availability and feasibility, we may narrow the scope of our model to focus on a smaller geographic region, such as the Chicago area.
+West Nile virus (WNV) is the leading cause of mosquito-borne disease in the United States and poses a significant public health concern \[[ref](https://www.cdc.gov/west-nile-virus/about/index.html?)\]. Its transmission is influenced by environmental factors such as temperature, humidity as well as mosquito abundance and infection rates. However, predicting when and where outbreaks occur remains challenging. By integrating historical climate conditions with mosquito surveillance data, this project aims to identify patterns associated with WNV transmission and develop a predictive model to estimate future cases or incidence. Early identification of periods and locations with increased WNVcould help inform timely surveillance, mosquito control, and disease prevention efforts.
 
-Our intended audience is the general public, particularly individuals concerned about or at higher risk of mosquito-borne illnesses. Being able to model and predict these diseases could help inform the public and encourage individuals at risk to take preventive measures.
-
-West Nile virus (WNV) is the leading cause of mosquito-borne disease in the United States and poses a significant public health concern. Its transmission is influenced by environmental factors such as temperature, humidity, mosquito abundance, and mosquito infection rates. However, predicting when and where outbreaks will occur remains challenging.
-
-By integrating historical climate conditions with mosquito surveillance data, this project aims to identify patterns associated with WNV transmission and develop a predictive model to estimate future cases or incidence.
+Our intended audience includes public health professionals, epidemiologists, vector control programs, local health departments and the general public who may be concerned with or at a higher risk of mosquito-borne illnesses. Being able to model and predict these diseases can help inform the public and caution people at risk to try and prevent disease. An interactive dashboard could make data more accessible, allowing users to visualize trends, identify potential high-risk periods, and make informed decisions about mosquito-borne disease prevention.
 
 ## 3. Related Work
 
 Several existing studies and tools are relevant to our proposed project.
 
-The [2023 CDC West Nile Virus Forecasting Challenge](https://github.com/cdcepi/WNV-forecast-project-2023) examines the ability of forecasting models to predict WNV cases at the state level. The challenge also provides related data sources covering weather forecasting, mosquito abundance and infection, environmental conditions, and human disease outcomes [1].
+The [2023 CDC West Nile Virus Forecasting Challenge](https://github.com/cdcepi/WNV-forecast-project-2023) examines the ability of forecasting models to predict WNV cases at the state level. The challenge also provides related data sources covering weather forecasting, mosquito abundance and infection, environmental conditions, and human disease outcomes \[1\].
 
-A study by Yi et al. (2024) developed a model incorporating weather factors, including temperature and precipitation, and WNV transmission among humans, birds, and mosquitoes in Colorado. The study demonstrated strong predictive capabilities for WNV outbreaks [2].
+A study by Yi et al. (2024) developed a model incorporating weather factors, including temperature and precipitation, and WNV transmission among humans, birds, and mosquitoes in Colorado. The study demonstrated strong predictive capabilities for WNV outbreaks \[2\].
 
-Another related tool is [MosquitoZone](https://mosquitozone.app/map), which provides forecasts of mosquito abundance across the United States based on weather forecasts and local habitat characteristics. Mosquito abundance is ranked from low to high and visualized on a map using a color scale [3].
+Another related tool is [MosquitoZone](https://mosquitozone.app/map), which provides forecasts of mosquito abundance across the United States based on weather forecasts and local habitat characteristics. Mosquito abundance is ranked from low to high and visualized on a map using a color scale \[3\].
+
+Our project builds on these approaches by integrating climate and mosquito surveillance data into an interactive R Shiny dashboard that allows users to explore historical trends and visualize predicted WNV illness.
 
 ## 4. Data and Access
 
@@ -150,7 +148,7 @@ The dashboard will provide a visual and accessible interface for exploring the p
 We plan to divide the project into five weekly stages.
 
 | Week | Planned Activities |
-|:---|:---|
+|:-----------------------------------|:-----------------------------------|
 | **Week 1** | Access relevant datasets, confirm data availability, and identify the variables needed for analysis. |
 | **Week 2** | Clean and merge datasets and conduct exploratory data analysis. |
 | **Week 3** | Develop and evaluate a baseline prediction model. |
@@ -169,18 +167,18 @@ The feasibility of additional modeling components will depend on data availabili
 
 We plan to divide the work among three main components:
 
-1. **Data Acquisition and Integration:** Obtaining, cleaning, and combining relevant datasets.
-2. **Predictive Modeling:** Implementing and validating machine learning models.
-3. **Dashboard Development:** Designing and developing the interactive R Shiny application.
+1.  **Data Acquisition and Integration:** Obtaining, cleaning, and combining relevant datasets.
+2.  **Predictive Modeling:** Implementing and validating machine learning models.
+3.  **Dashboard Development:** Designing and developing the interactive R Shiny application.
 
-Team members will coordinate their work through regular communication over text and discussions after class.
+Team members will coordinate their work through regular communication over text and discussions after class. The team leader will coordinate project milestones and monitor progress. Specific responsibilities will be assigned based on team members' interests and availability, with collaboration across tasks as needed.
 
-We will check in regularly to review progress, address challenges, and coordinate the integration of the different project components.
+We will check in regularly to review progress, address challenges, and coordinate the integration of the different project components. GitHub will serve as our shared repository for code, documentation, and version control, allowing team members to track contributions and integrate their work.
 
 ## References
 
-1. Centers for Disease Control and Prevention. (2023). *West Nile Virus Forecasting Challenge*. GitHub. [https://github.com/cdcepi/WNV-forecast-project-2023](https://github.com/cdcepi/WNV-forecast-project-2023)
+1.  Centers for Disease Control and Prevention. (2023). *West Nile Virus Forecasting Challenge*. GitHub. <https://github.com/cdcepi/WNV-forecast-project-2023>
 
-2. Yi, C., Cohnstaedt, L. W., & Scoglio, C. M. (2024). A real-time forecasting and estimating system of West Nile virus: A case study of the 2023 WNV outbreak in Colorado, USA. *Royal Society Open Science, 11*(12), 240513. [https://doi.org/10.1098/rsos.240513](https://doi.org/10.1098/rsos.240513)
+2.  Yi, C., Cohnstaedt, L. W., & Scoglio, C. M. (2024). A real-time forecasting and estimating system of West Nile virus: A case study of the 2023 WNV outbreak in Colorado, USA. *Royal Society Open Science, 11*(12), 240513. <https://doi.org/10.1098/rsos.240513>
 
-3. MosquitoZone. *Forecast Methodology*. [https://mosquitozone.app/methodology](https://mosquitozone.app/methodology)
+3.  MosquitoZone. *Forecast Methodology*. <https://mosquitozone.app/methodology>
