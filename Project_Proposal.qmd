@@ -1,0 +1,186 @@
+---
+title: "Project Proposal"
+subtitle: "Predicting West Nile Virus Activity Using Climate Data: An Interactive R Shiny Dashboard"
+format:
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+    colorlinks: true
+    toc: false
+    number-sections: false
+editor: visual
+---
+
+## 1. Title and Team
+
+**Project Title:** Predicting West Nile Virus Activity Using Climate Data: An Interactive R Shiny Dashboard
+
+**Team Members:**
+
+- Kathleen Shiffer (Team Leader)
+- Yaa Adoma Kwapong
+- Julia Cheunkarndee
+- Hsinpin Wen
+- Sophie McInerney
+
+## 2. Question and Audience
+
+**Research Question:** Can historical climate conditions and mosquito surveillance data predict West Nile virus (WNV) cases or incidence in the United States?
+
+Depending on data availability and feasibility, we may narrow the scope of our model to focus on a smaller geographic region, such as the Chicago area.
+
+Our intended audience is the general public, particularly individuals concerned about or at higher risk of mosquito-borne illnesses. Being able to model and predict these diseases could help inform the public and encourage individuals at risk to take preventive measures.
+
+West Nile virus (WNV) is the leading cause of mosquito-borne disease in the United States and poses a significant public health concern. Its transmission is influenced by environmental factors such as temperature, humidity, mosquito abundance, and mosquito infection rates. However, predicting when and where outbreaks will occur remains challenging.
+
+By integrating historical climate conditions with mosquito surveillance data, this project aims to identify patterns associated with WNV transmission and develop a predictive model to estimate future cases or incidence.
+
+## 3. Related Work
+
+Several existing studies and tools are relevant to our proposed project.
+
+The [2023 CDC West Nile Virus Forecasting Challenge](https://github.com/cdcepi/WNV-forecast-project-2023) examines the ability of forecasting models to predict WNV cases at the state level. The challenge also provides related data sources covering weather forecasting, mosquito abundance and infection, environmental conditions, and human disease outcomes [1].
+
+A study by Yi et al. (2024) developed a model incorporating weather factors, including temperature and precipitation, and WNV transmission among humans, birds, and mosquitoes in Colorado. The study demonstrated strong predictive capabilities for WNV outbreaks [2].
+
+Another related tool is [MosquitoZone](https://mosquitozone.app/map), which provides forecasts of mosquito abundance across the United States based on weather forecasts and local habitat characteristics. Mosquito abundance is ranked from low to high and visualized on a map using a color scale [3].
+
+## 4. Data and Access
+
+We have identified several publicly available datasets that could support our project.
+
+### Primary Data Sources
+
+**Chicago West Nile Virus Mosquito Test Results**
+
+The [Chicago WNV Mosquito Surveillance Dataset](https://www.chicago.fyi/explore/wnv-mosquitoes) contains mosquito surveillance data covering 2007 to the present, with approximately 45,000 observations.
+
+Relevant variables include:
+
+- Positive or negative WNV test results
+- Mosquito species
+- Surveillance dates and weeks
+- Geographic identifiers, including community area and ZIP code
+- Surveillance year
+
+**Open-Meteo Historical Weather API**
+
+The [Open-Meteo Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api) provides historical meteorological data for selected geographic coordinates.
+
+We could retrieve environmental predictors including:
+
+- Temperature
+- Precipitation
+- Humidity
+- Other relevant climate measurements
+
+### Additional Potential Data Sources
+
+We have also identified the following sources:
+
+- [CDC Historical West Nile Virus Surveillance Data](https://www.cdc.gov/west-nile-virus/data-maps/historic-data.html): Historical human WNV surveillance data at the state and county levels.
+- [CDC ArboNET](https://www.cdc.gov/vector-borne-diseases/php/arbonet/): A national arboviral surveillance system containing information about mosquito-borne diseases.
+- [California West Nile Virus Cases, 2006–Present](https://publish.data.ca.gov/dataset/west-nile-virus-cases-2006-present): Publicly available county-level human WNV case data.
+- [NOAA Climate Data Online](https://www.ncei.noaa.gov/cdo-web/): An alternative source of historical weather measurements.
+
+### Proposed Data Integration Workflow
+
+We plan to merge relevant datasets using standardized dates to construct a dataset containing weather predictors, the number of positive mosquito pools, and the total number of mosquito pools tested.
+
+Depending on the geographic and temporal resolution of the available data, we will determine the most appropriate level at which to combine the observations.
+
+## 5. Planned Work
+
+Our planned work includes several components.
+
+**Data Collection and Cleaning**
+
+We will retrieve relevant datasets, inspect their structure, clean the observations, and prepare the data for integration and analysis.
+
+**Exploratory Data Analysis**
+
+We will examine variation in mosquito surveillance results and disease incidence, including potential relationships with environmental conditions.
+
+**Predictive Modeling**
+
+We plan to explore machine learning methods that use climate data to predict mosquito populations, as well as mosquito infection data to predict future WNV prevalence or incidence.
+
+If data availability and time permit, we may also investigate incorporating hospital or demographic data to predict an individual's risk of mosquito-borne disease.
+
+## 6. Programming Paradigms
+
+We plan to incorporate functions into our data processing workflow, particularly for data parsing, cleaning, and transformation.
+
+We also intend to implement machine learning models to generate predictions based on the integrated datasets.
+
+These methods will be incorporated into our data collection, analysis, and application development workflow.
+
+## 7. Software
+
+We plan to use **R** as our primary programming language.
+
+Potential packages include:
+
+- `shiny` for interactive dashboard development
+- `ggplot2` for data visualization
+- `rsconnect` for application deployment
+- `bslib` for dashboard styling
+- `rvest` for data collection and web scraping
+
+We may incorporate additional packages as needed for data processing, modeling, and integration.
+
+We will also use **Git and GitHub** for version control and collaboration.
+
+## 8. Product
+
+Our final product will be an interactive **R Shiny dashboard** that allows users to explore predicted West Nile virus incidence based on mosquito populations and climate predictions.
+
+Currently, we envision allowing users to select variables such as:
+
+- **Time:** Season, month, or year
+- **Location:** County, if using nationwide data
+
+If data availability and modeling methods permit, we may also incorporate additional features, such as allowing users to select different mosquito-borne diseases or explore estimated risk for individuals with certain demographic characteristics, including age or race.
+
+The dashboard will provide a visual and accessible interface for exploring the predictions generated by our models.
+
+## 9. Timeline and Feasibility
+
+We plan to divide the project into five weekly stages.
+
+| Week | Planned Activities |
+|:---|:---|
+| **Week 1** | Access relevant datasets, confirm data availability, and identify the variables needed for analysis. |
+| **Week 2** | Clean and merge datasets and conduct exploratory data analysis. |
+| **Week 3** | Develop and evaluate a baseline prediction model. |
+| **Week 4** | Build the R Shiny interface and connect it to the predictive model. |
+| **Week 5** | Test the application, address any issues, and prepare the final presentation. |
+
+### Anticipated Challenges
+
+One potential challenge will be aligning historical weather measurements with weekly mosquito surveillance observations, particularly when datasets differ in geographic or temporal resolution.
+
+We also recognize that historical associations between weather conditions and mosquito surveillance results may not necessarily translate into reliable forecasts of human infection risk.
+
+The feasibility of additional modeling components will depend on data availability and the time required to integrate the datasets.
+
+## 10. Team Responsibilities
+
+We plan to divide the work among three main components:
+
+1. **Data Acquisition and Integration:** Obtaining, cleaning, and combining relevant datasets.
+2. **Predictive Modeling:** Implementing and validating machine learning models.
+3. **Dashboard Development:** Designing and developing the interactive R Shiny application.
+
+Team members will coordinate their work through regular communication over text and discussions after class.
+
+We will check in regularly to review progress, address challenges, and coordinate the integration of the different project components.
+
+## References
+
+1. Centers for Disease Control and Prevention. (2023). *West Nile Virus Forecasting Challenge*. GitHub. [https://github.com/cdcepi/WNV-forecast-project-2023](https://github.com/cdcepi/WNV-forecast-project-2023)
+
+2. Yi, C., Cohnstaedt, L. W., & Scoglio, C. M. (2024). A real-time forecasting and estimating system of West Nile virus: A case study of the 2023 WNV outbreak in Colorado, USA. *Royal Society Open Science, 11*(12), 240513. [https://doi.org/10.1098/rsos.240513](https://doi.org/10.1098/rsos.240513)
+
+3. MosquitoZone. *Forecast Methodology*. [https://mosquitozone.app/methodology](https://mosquitozone.app/methodology)
